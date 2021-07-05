@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1600.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ReviewerMainController">
+   <children>
+      <HBox alignment="TOP_RIGHT" layoutY="2.0" prefHeight="27.0" prefWidth="801.0" styleClass="hboxColour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="26.0" prefWidth="1325.0" />
+            <SplitMenuButton fx:id="myMenuBar" mnemonicParsing="false" prefHeight="10.0" prefWidth="180.0" styleClass="splitmenuBtn">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#gotoSettings" text="Settings" />
+               </items>
+            </SplitMenuButton>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#303138" glyphName="MINUS" onMouseClicked="#minimise" size="20" styleClass="hboxColourCursor" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#303138" glyphName="CLONE" onMouseClicked="#maximise" size="15" styleClass="hboxColourCursor" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorCloseLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#e81123" glyphName="CLOSE" onMouseClicked="#close" size="20" textAlignment="CENTER" wrappingWidth="34.0">
+                     <styleClass>
+                        <String fx:value="hboxColourCursor" />
+                        <String fx:value="hboxColourCursorCloseLabel" />
+                     </styleClass>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <Line endX="230.0" layoutX="1354.0" layoutY="114.0" startX="-99.99996948242188" styleClass="pageTitleLine" />
+      <Line endX="-100.0" endY="35.0" layoutX="1690.0" layoutY="72.0" startX="-100.0" startY="-9.0" styleClass="pageTitleLine" />
+      <Line endX="230.0" layoutX="1354.0" layoutY="55.0" startX="-99.99996948242188" styleClass="pageTitleLine" />
+      <Line endX="-100.0" endY="35.0" layoutX="1350.0" layoutY="72.0" startX="-100.0" startY="-9.0" styleClass="pageTitleLine" />
+      <ImageView fitHeight="30.0" fitWidth="200.0" layoutX="1319.0" layoutY="70.0">
+         <image>
+            <Image url="@reviewermain.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="mainBtn" layoutX="19.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#gotoMain" prefHeight="45.0" prefWidth="190.0" styleClass="mainBtn" text="Main">
+         <font>
+            <Font name="Yu Gothic Medium" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="BugsAssignBtn" layoutX="243.0" layoutY="98.0" mnemonicParsing="false" onMouseClicked="#goToReviewBugs" prefHeight="45.0" prefWidth="190.0" styleClass="secondmainBtn" text="Review Bugs">
+         <font>
+            <Font name="Yu Gothic Medium" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="content_area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="850.0" styleClass="parent" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainUiController">
+   <children>
+      <HBox alignment="TOP_RIGHT" prefHeight="27.0" prefWidth="801.0" styleClass="hboxColour" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#303138" glyphName="MINUS" onMouseClicked="#minimise" size="20" styleClass="hboxColourCursor" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#303138" glyphName="CLONE" onMouseClicked="#maximise" size="15" styleClass="hboxColourCursor" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="34.0" prefWidth="34.0" styleClass="hboxColourCursorCloseLabel">
+               <graphic>
+                  <FontAwesomeIconView fill="#e81123" glyphName="CLOSE" onMouseClicked="#close" size="20" textAlignment="CENTER" wrappingWidth="34.0">
+                     <styleClass>
+                        <String fx:value="hboxColourCursorCloseLabel" />
+                        <String fx:value="hboxColourCursor" />
+                     </styleClass>
+                  </FontAwesomeIconView>
+               </graphic>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <Button defaultButton="true" layoutX="396.0" layoutY="341.0" mnemonicParsing="false" onAction="#gotoLogin" prefHeight="53.0" prefWidth="377.0" styleClass="loginBtn" text="Login">
+         <font>
+            <Font name="Yu Gothic Medium" size="20.0" />
+         </font>
+      </Button>
+      <Line endX="3.0" endY="586.0" layoutX="327.0" layoutY="14.0" startX="3.0" startY="19.0" stroke="#303138" strokeWidth="3.0" styleClass="VaultMasterDividerLine" />
+      <JFXTextField fx:id="username" focusColor="LIMEGREEN" labelFloat="true" layoutX="396.0" layoutY="124.0" onAction="#gotoLogin" prefHeight="40.0" prefWidth="377.0" promptText="Username" styleClass="loginTextField" unFocusColor="DIMGRAY">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="pass_hide" focusColor="LIMEGREEN" labelFloat="true" layoutX="396.0" layoutY="213.0" prefHeight="40.0" prefWidth="377.0" promptText="Password" styleClass="loginTextField" unFocusColor="DIMGRAY">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXPasswordField>
+      <FontAwesomeIconView fx:id="icon2" fill="DIMGRAY" glyphName="EYE_SLASH" layoutX="755.0" layoutY="238.0" onMousePressed="#showPassword" size="18" styleClass="logineyeIcon" />
+      <JFXTextField fx:id="pass_show" focusColor="LIMEGREEN" labelFloat="true" layoutX="396.0" layoutY="213.0" onAction="#gotoLogin" prefHeight="40.0" prefWidth="377.0" promptText="Password" styleClass="loginTextField" text=" " unFocusColor="DIMGRAY">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <FontAwesomeIconView fx:id="icon1" fill="DIMGRAY" glyphName="EYE" layoutX="755.0" layoutY="238.0" onMousePressed="#hidePassword" size="18" styleClass="logineyeIcon" />
+      <Label fx:id="dialogLabel" layoutX="396.0" layoutY="255.0" prefHeight="36.0" prefWidth="377.0" textAlignment="JUSTIFY" textFill="RED" wrapText="true" />
+      <ImageView fitHeight="103.0" fitWidth="240.0" layoutX="45.0" layoutY="124.0" pickOnBounds="true" preserveRatio="true" styleClass="MOSTitle">
+         <image>
+            <Image url="@titleLabel.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="111.0" fitWidth="134.0" layoutX="98.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true" styleClass="MOSIcon">
+         <image>
+            <Image url="@titleIcon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
